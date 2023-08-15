@@ -10,7 +10,7 @@
 
         <ul>
             {% for entry in topic.entry_set.all %}
-                <li><a href="{% url 'learning_logs:entry' entry.id %}">{{ entry.text }}</a></li>
+                <li><a href="{% url 'learning_logs:entry' entry.id %}">{{ entry.text|truncatechars:30 }}</a></li>
             {% empty %}
                 <li>No logs for this topic.</li>
             {% endfor %}
